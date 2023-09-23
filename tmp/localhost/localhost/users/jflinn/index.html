@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Default Title</title>
+    <style>
+      .container {
+        width: 90%;
+        margin: auto;
+      }
+
+      .div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid black;
+        padding: 20px 0px;
+      }
+
+      ul li {
+        display: inline-flex;
+      }
+
+      ul li a {
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+        font-size: 15px;
+        gap: 10px;
+        padding: 0px 5px;
+      }
+      .explore {
+        border-right: 3px solid black;
+      }
+
+      .first-image {
+        padding-right: 30px;
+        border-right: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+      
+
+      <div class="container">
+        <div class="div">
+          <div class="images">
+           <a href="/"> <br> Home</a>
+          </div>
+          <ul>
+            <li>
+              <a href="/explore/" class="explore" style="font-size: 17px"
+                >Explore &nbsp;</a
+              >
+            </li>
+            <li>
+              <a href="/users/awdeorio/" style="font-size: 17px"
+                >awdeorio</a
+              >
+            </li>
+          </ul>
+        </div>
+         
+        
+        
+<div>
+
+    <h1>jflinn</h1>
+    
+    <p>not following</p>
+     <!-- Form for unfollow button -->
+        <form action="/following/?target=/users/jflinn/" method="post" enctype="multipart/form-data">
+
+            <input type="submit" name="unfollow" value="Unfollow"/>
+            <input type="hidden" name="username" value="jflinn"/>
+            <input type="hidden" name="operation" value="unfollow"/>
+        </form>
+     
+
+    
+        <p>1 post</p>
+    
+
+    
+        <a href="/users/jflinn/followers/">1 followers</a>
+    
+
+    <a href="/users/jflinn/following/">2 following</a>
+    <p> Jason Flinn </p>
+
+    
+
+    
+    <div>
+        <a href="/posts/2/">
+            <img src="/uploads/ad7790405c539894d25ab8dcf0b79eed3341e109.jpg" alt="Post Image">
+        </a>
+    </div>
+
+
+
+
+</div>
+        
+      </div>
+  </body>
+</html>

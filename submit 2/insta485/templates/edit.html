@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <style>
+      .container {
+        width: 90%;
+        margin: auto;
+      }
+
+      .div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid black;
+        padding: 20px 0px;
+      }
+
+      ul li {
+        display: inline-flex;
+      }
+
+      ul li a {
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+        font-size: 15px;
+        gap: 10px;
+        padding: 0px 5px;
+      }
+      .explore {
+        border-right: 3px solid black;
+      }
+
+      .first-image {
+        padding-right: 30px;
+        border-right: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+      {% block main %}
+
+      <div class="container">
+        <div class="div">
+          <div class="images">
+            <a href="/"> <br> Home</a>
+          </div>
+          <ul>
+            <li>
+              <a href="/explore/" class="explore" style="font-size: 17px"
+                >Explore &nbsp;</a
+              >
+            </li>
+            <li>
+              <a href="/users/{{ logname }}/" style="font-size: 17px"
+                >{{ logname }}</a
+              >
+            </li>
+          </ul>
+        </div>
+        {% endblock main%} 
+        {% block content %}
+        <h2>{{ logname }}</h2>
+
+   <img src="/uploads/{{ filename }}" alt="" /></a>
+
+        <form action="/accounts/?target={{url_for('edit')}}" method="post" enctype="multipart/form-data">
+            <p1>Photo  </p1><input type="file" name="file" accept="image/*"/>
+            <p1>Name  </p1><input type="text" name="fullname" value="{{fullname}}" required/>
+            <p1>Email  </p1><input type="text" name="email" value="{{email}}" required/>
+            <input type="submit" name="update" value="submit"/>
+            <input type="hidden" name="operation" value="edit_account"/>
+        </form>
+
+         <!-- Link to change password -->
+         <a href="{{ url_for('password_user')}}">Change Password</a>
+        
+        <!-- Link to delete account -->
+        <a href="{{ url_for('delete')}}">Delete Password</a>
+        
+        {% endblock %}
+      </div>
+  </body>
+</html>

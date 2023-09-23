@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Default Title</title>
+    <style>
+      .container {
+        width: 90%;
+        margin: auto;
+      }
+
+      .div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid black;
+        padding: 20px 0px;
+      }
+
+      ul li {
+        display: inline-flex;
+      }
+
+      ul li a {
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+        font-size: 15px;
+        gap: 10px;
+        padding: 0px 5px;
+      }
+      .explore {
+        border-right: 3px solid black;
+      }
+
+      .first-image {
+        padding-right: 30px;
+        border-right: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+      
+
+      <div class="container">
+        <div class="div">
+          <div class="images">
+           <a href="/"> <br> Home</a>
+          </div>
+          <ul>
+            <li>
+              <a href="/explore/" class="explore" style="font-size: 17px"
+                >Explore &nbsp;</a
+              >
+            </li>
+            <li>
+              <a href="/users/awdeorio/" style="font-size: 17px"
+                >awdeorio</a
+              >
+            </li>
+          </ul>
+        </div>
+         
+        
+        
+<div>
+
+    <h1>awdeorio</h1>
+    
+        
+    
+
+    
+        <p>2 posts</p>
+    
+
+    
+        <a href="/users/awdeorio/followers/">2 followers</a>
+    
+
+    <a href="/users/awdeorio/following/">2 following</a>
+    <p> Andrew DeOrio </p>
+
+    
+
+    
+    <div>
+        <a href="/posts/1/">
+            <img src="/uploads/122a7d27ca1d7420a1072f695d9290fad4501a41.jpg" alt="Post Image">
+        </a>
+    </div>
+
+    <div>
+        <a href="/posts/3/">
+            <img src="/uploads/9887e06812ef434d291e4936417d125cd594b38a.jpg" alt="Post Image">
+        </a>
+    </div>
+
+
+
+<p><a href= "/accounts/edit/">Edit profile</a></p>
+
+<form action="/accounts/logout/" method="post" enctype="multipart/form-data">
+    <input type="submit" name="logout" value="Logout"/>
+</form>
+
+<form action="/posts/?target=/users/awdeorio/" method="post" enctype="multipart/form-data">
+<input type="file" name="file" accept="image/*" required/>
+<input type="submit" name="create_post" value="upload new post"/>
+<input type="hidden" name="operation" value="create"/>
+</form>
+
+
+</div>
+        
+      </div>
+  </body>
+</html>

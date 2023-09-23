@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <style>
+      .container {
+        width: 90%;
+        margin: auto;
+      }
+
+      .div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid black;
+        padding: 20px 0px;
+      }
+
+      ul li {
+        display: inline-flex;
+      }
+
+      ul li a {
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+        font-size: 15px;
+        gap: 10px;
+        padding: 0px 5px;
+      }
+      .explore {
+        border-right: 3px solid black;
+      }
+
+      .first-image {
+        padding-right: 30px;
+        border-right: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+      {% block main %}
+
+      <div class="container">
+        <div class="div">
+          <div class="images">
+            <a href="/"> <br> Home</a>
+          </div>
+          <ul>
+            <li>
+              <a href="/explore/" class="explore" style="font-size: 17px"
+                >Explore &nbsp;</a
+              >
+            </li>
+            <li>
+              <a href="/users/{{ logname }}/" style="font-size: 17px"
+                >{{ logname }}</a
+              >
+            </li>
+          </ul>
+        </div>
+        {% endblock main%} 
+        {% block content %}
+        
+<div>
+     <li>
+              <a href="/users/{{ logname }}/" style="font-size: 17px"
+                >{{ logname }}</a
+              >
+            </li>
+{% for post in posts %}
+    {{ post.likes }} {{ 'likes' if post.likes != 1 else 'like' }}
+    <a href="/users/{{ post.owner }}/">{{ post.owner }}</a>
+
+    <a href="/users/{{ post.owner }}/"><img src="/uploads/{{ post.owner_img_url }}" alt="{{ post.owner }}" /></a>
+    <a href="/posts/{{post.postid}}/"> {{post.timestamp}} </a>
+
+    <img src="/uploads/{{ post.filename }}" alt="" />
+
+
+                <ul>
+                    {% for comment in post.comments %}
+                        <li>
+                            <a href="/users/{{ comment.owner }}/"></a>
+                            <b>{{ comment.owner }}<b> {{ comment.text }} 
+                        </li>
+                    {% endfor %}
+                </ul>
+
+
+    {% if post.liked_by_logname %}
+     <form action="/likes/?target={{url_for('show_index')}}" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="operation" value="unlike"/>
+        <input type="hidden" name="postid" value="{{ post.postid }}"/>
+        <input type="submit" name="unlike" value="unlike"/>
+    </form>
+
+    {% else %}
+    <form action="/likes/?target={{url_for('show_index')}}" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="operation" value="like"/>
+        <input type="hidden" name="postid" value="{{ post.postid }}"/>
+        <input type="submit" name="like" value="like"/>
+    </form>
+
+    {% endif %}
+
+    <form action="/comments/?target={{url_for('show_index')}}" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="operation" value="create"/>
+        <input type="hidden" name="postid" value="{{ post.postid }}"/>
+        <input type="text" name="text" required/>
+        <input type="submit" name="comment" value="comment"/>
+    </form>
+{% endfor %}
+</div>
+        {% endblock %}
+      </div>
+  </body>
+</html>

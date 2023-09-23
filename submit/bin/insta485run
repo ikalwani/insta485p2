@@ -1,0 +1,18 @@
+#!/bin/bash
+# insta485db
+
+# Stop on errors
+# See https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
+set -Eeuo pipefail
+
+FILE=var/insta485.sqlite3
+if [ ! -f "$FILE" ]; then
+  echo "Error: can't find database var/insta485.sqlite3"
+  echo "Try: ./bin/insta485db create"
+  exit 1  # Exit with non-zero status code to indicate an error
+fi
+
+export FLASK_ENV=development
+export FLASK_APP=insta485
+flask run --host 0.0.0.0 --port 8000
+

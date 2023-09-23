@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Default Title</title>
+    <style>
+      .container {
+        width: 90%;
+        margin: auto;
+      }
+
+      .div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid black;
+        padding: 20px 0px;
+      }
+
+      ul li {
+        display: inline-flex;
+      }
+
+      ul li a {
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+        font-size: 15px;
+        gap: 10px;
+        padding: 0px 5px;
+      }
+      .explore {
+        border-right: 3px solid black;
+      }
+
+      .first-image {
+        padding-right: 30px;
+        border-right: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+      
+
+      <div class="container">
+        <div class="div">
+          <div class="images">
+           <a href="/"> <br> Home</a>
+          </div>
+          <ul>
+            <li>
+              <a href="/explore/" class="explore" style="font-size: 17px"
+                >Explore &nbsp;</a
+              >
+            </li>
+            <li>
+              <a href="/users/awdeorio/" style="font-size: 17px"
+                >awdeorio</a
+              >
+            </li>
+          </ul>
+        </div>
+         
+        
+        
+<div>
+
+    <h1>michjc</h1>
+    
+    <p>not following</p>
+     <!-- Form for unfollow button -->
+        <form action="/following/?target=/users/michjc/" method="post" enctype="multipart/form-data">
+
+            <input type="submit" name="unfollow" value="Unfollow"/>
+            <input type="hidden" name="username" value="michjc"/>
+            <input type="hidden" name="operation" value="unfollow"/>
+        </form>
+     
+
+    
+        <p>0 posts</p>
+    
+
+    
+        <a href="/users/michjc/followers/">3 followers</a>
+    
+
+    <a href="/users/michjc/following/">2 following</a>
+    <p> Michael Cafarella </p>
+
+    
+        <p1>No posts yet.</p1>
+    
+
+    
+
+
+
+</div>
+        
+      </div>
+  </body>
+</html>
