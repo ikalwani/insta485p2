@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -45,31 +46,28 @@
       <div class="container">
         <div class="div">
           <div class="images">
-            <a href="/"> Home</a>
+           <a href="/"> <br> Home</a>
           </div>
-          <ul>
-            <li>
-              <a href="/explore/" class="explore" style="font-size: 17px"
-                >Explore &nbsp;</a
-              >
-            </li>
-            <li>
-              <a href="/users/awdeorio/" style="font-size: 17px"
-                >awdeorio</a
-              >
-            </li>
-          </ul>
+
+            <p1> <b> Login </p1> </b>
+
+
+          
         </div>
          
         
+     
 
-        <h1>Followers</h1>
 
-    
-        <img src= "/uploads/e1a7c5c32973862ee15173b0259e3efdb6a391af.jpg" alt="" />
-        <a href="/users/awdeorio/">awdeorio</a>
+<form action="/accounts/?target=/" method="post" enctype="multipart/form-data">
+          <input type="text" name="username" placeholder="username" required/>
+          <input type="password" name="password" placeholder="password" required/>
+          <input style="width: 50%;" type="submit" value="login"/>
+          <input type="hidden" name="operation" value="login"/>
+        </form>
+        <p> If you don't have an account, click here. <a href="/accounts/create/">Sign up</a> </p>
+
         
-    
         
       </div>
   </body>

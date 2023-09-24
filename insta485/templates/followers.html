@@ -45,7 +45,7 @@
       <div class="container">
         <div class="div">
           <div class="images">
-            <a href="/"> <br> Home</a>
+            <a href="/"> Home</a>
           </div>
           <ul>
             <li>
@@ -65,9 +65,7 @@
 
         <h1>Followers{{ user_url_slug }}</h1>
 
-  <ul>
     {% for follower in follower_info %}
-      <li>
         <img src= "/uploads/{{follower.filename}}" alt="" />
         <a href="/users/{{ follower.username }}/">{{ follower.username }}</a>
         {% if follower.relationship == 'following' %}
@@ -86,9 +84,7 @@
             <input type="hidden" name="operation" value="follow">
           </form>
         {% endif %}
-      </li>
     {% endfor %}
-  </ul>
         {% endblock %}
       </div>
   </body>

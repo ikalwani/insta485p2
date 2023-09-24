@@ -40,65 +40,47 @@
     </style>
   </head>
   <body>
-      
+    
+    <a href="/">Home "</a>
+    <a href="/explore/" class="explore" style="font-size: 17px"
+      >Explore &nbsp;</a
+    >
+    <a href="/users/awdeorio/" style="font-size: 17px">awdeorio</a>
+     0 likes
+    <a href="/users/jag/">jag</a>
 
-      <div class="container">
-        <div class="div">
-          <div class="images">
-            <a href="/">Home "</a>
-          </div>
-          <ul>
-            <li>
-              <a href="/explore/" class="explore" style="font-size: 17px"
-                >Explore &nbsp;</a
-              >
-            </li>
-            <li>
-              <a href="/users/awdeorio/" style="font-size: 17px"
-                >awdeorio</a
-              >
-            </li>
-          </ul>
-        </div>
-         
-        
-<div>
-
-
-0 likes
-<a href="/users/jag/">jag</a>
-
-<a href="/users/jag/"><img src="/uploads/73ab33bd357c3fd42292487b825880958c595655.jpg" alt="jag" /></a>
-<a href="/posts/4/">just now</a>
-
-    <li>
+    <a href="/users/jag/"
+      ><img src="/uploads/73ab33bd357c3fd42292487b825880958c595655.jpg" alt="jag"
+    /></a>
+    <a href="/posts/4/">just now</a>
+    
     <a href="/users/jag/"></a>
-    <b>jag<b> Saw this on the diag yesterday! 
-    </li>
+    jag Saw this on the diag yesterday!  
+
+    <img src="/uploads/2ec7cf8ae158b3b1f40065abfb33e81143707842.jpg" alt="" />
+    
+    <form
+      action="/likes/?target=/posts/4/"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="hidden" name="operation" value="like" />
+      <input type="hidden" name="postid" value="4" />
+      <input type="submit" name="like" value="like" />
+    </form>
     
 
-    </ul>
-
-
-<img src="/uploads/2ec7cf8ae158b3b1f40065abfb33e81143707842.jpg" alt="" />
-
-<form action="/likes/?target=/posts/4/" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="operation" value="like"/>
-        <input type="hidden" name="postid" value="4"/>
-        <input type="submit" name="like" value="like"/>
+    <form
+      action="/comments/?target=/posts/4/"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="hidden" name="operation" value="create" />
+      <input type="hidden" name="postid" value="4" />
+      <input type="text" name="text" required />
+      <input type="submit" name="comment" value="comment" />
     </form>
 
-
-<form action="/comments/?target=/posts/4/" method="post"
-            enctype="multipart/form-data">
-<input type="hidden" name="operation" value="create" />
-<input type="hidden" name="postid" value="4" />
-<input type="text" name="text" required />
-<input type="submit" name="comment" value="comment" />
-</form>
-
-
-
-</div>
-</body>
+    
+  </body>
 </html>

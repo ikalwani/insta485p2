@@ -40,54 +40,51 @@
     </style>
   </head>
   <body>
-      
+    
 
-      <div class="container">
-        <div class="div">
-          <div class="images">
-           <a href="/"> <br> Home</a>
-          </div>
-          <ul>
-            <li>
-              <a href="/explore/" class="explore" style="font-size: 17px"
-                >Explore &nbsp;</a
-              >
-            </li>
-            <li>
-              <a href="/users/awdeorio/" style="font-size: 17px"
-                >awdeorio</a
-              >
-            </li>
-          </ul>
+    <div class="container">
+      <div class="div">
+        <div class="images">
+          <a href="/">
+            Home</a
+          >
         </div>
-         
+        <ul>
+          <li>
+            <a href="/explore/" class="explore" style="font-size: 17px"
+              >Explore &nbsp;</a
+            >
+          </li>
+          <li>
+            <a href="/users/awdeorio/" style="font-size: 17px"
+              >awdeorio</a
+            >
+          </li>
+        </ul>
+      </div>
+       
+      <div>
+        <h1>Discover People</h1>
+      </div>
+
+      <div class="user-list">
         
-        <div>
-            <h1>Discover People</h1>
+        <div class="user-item">
+          <img src="/uploads/73ab33bd357c3fd42292487b825880958c595655.jpg" alt="" />
+          <a href="/users/jag/">jag</a>
+          <form
+            action="/following/?target=/explore/"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <input type="submit" name="follow" value="follow" />
+            <input type="hidden" name="username" value="jag" />
+            <input type="hidden" name="operation" value="follow" />
+          </form>
         </div>
-
-        <div class="user-list">
-      
-      <div class="user-item">
-        <img src="/uploads/73ab33bd357c3fd42292487b825880958c595655.jpg" alt="">
-        <a href="/users/jag/">jag</a>
-        <form action="/following/?target=/explore/" method="post" enctype="multipart/form-data">
-            <input type="submit" name="follow" value="follow"/>
-  <input type="hidden" name="username" value="jag"/>
-  <input type="hidden" name="operation" value="follow"/>
-        </form>
+        
       </div>
       
     </div>
-
-    
-
-
-
-
-
-
-        
-      </div>
   </body>
 </html>

@@ -40,52 +40,41 @@
     </style>
   </head>
   <body>
-      
-
-      <div class="container">
-        <div class="div">
-          <div class="images">
-           <a href="/"> <br> Home</a>
-          </div>
-          <ul>
-            <li>
-              <a href="/explore/" class="explore" style="font-size: 17px"
-                >Explore &nbsp;</a
-              >
-            </li>
-            <li>
-              <a href="/users/awdeorio/" style="font-size: 17px"
-                >awdeorio</a
-              >
-            </li>
-          </ul>
-        </div>
-         
-
-        <h1>Following</h1>
-
-  <ul>
     
+    <a href="/">
+      Home</a>
+    <ul>
       <li>
-        <img src= "/uploads/e1a7c5c32973862ee15173b0259e3efdb6a391af.jpg" alt="" />
-        <a href="/users/awdeorio/">awdeorio</a>
-        
+        <a href="/explore/" class="explore" style="font-size: 17px"
+          >Explore &nbsp;</a>
       </li>
-    
       <li>
-        <img src= "/uploads/73ab33bd357c3fd42292487b825880958c595655.jpg" alt="" />
-        <a href="/users/jag/">jag</a>
-        
-        
-          <form action="/following/?target=/users/" method="post" enctype="multipart/form-data">
-            <input type="submit" name="follow" value="Follow">
-            <input type="hidden" name="username" value="jag">
-            <input type="hidden" name="operation" value="follow">
-          </form>
-        
+        <a href="/users/awdeorio/" style="font-size: 17px"
+          >awdeorio</a
+        >
       </li>
+    </ul>
     
-  </ul>
-      </div>
+
+    <h1>Following</h1>
+
+    
+    <img src="/uploads/e1a7c5c32973862ee15173b0259e3efdb6a391af.jpg" alt="" />
+    <a href="/users/awdeorio/">awdeorio</a>
+     
+    <img src="/uploads/73ab33bd357c3fd42292487b825880958c595655.jpg" alt="" />
+    <a href="/users/jag/">jag</a>
+    
+
+    <form
+      action="/following/?target=/users/"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="submit" name="follow" value="Follow" />
+      <input type="hidden" name="username" value="jag" />
+      <input type="hidden" name="operation" value="follow" />
+    </form>
+     
   </body>
 </html>

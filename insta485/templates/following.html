@@ -40,53 +40,49 @@
     </style>
   </head>
   <body>
-      {% block main %}
-
-      <div class="container">
-        <div class="div">
-          <div class="images">
-           <a href="/"> <br> Home</a>
-          </div>
-          <ul>
-            <li>
-              <a href="/explore/" class="explore" style="font-size: 17px"
-                >Explore &nbsp;</a
-              >
-            </li>
-            <li>
-              <a href="/users/{{ logname }}/" style="font-size: 17px"
-                >{{ logname }}</a
-              >
-            </li>
-          </ul>
-        </div>
-        {% endblock main%} 
-
-        <h1>Following{{ user_url_slug }}</h1>
-
-  <ul>
-    {% for following in following_in %}
+    {% block main %}
+    <a href="/">
+      Home</a>
+    <ul>
       <li>
-        <img src= "/uploads/{{following.filename}}" alt="" />
-        <a href="/users/{{ following.username }}/">{{ following.username }}</a>
-        {% if following.relationship == 'following' %}
-        <p>following</p>
-          <form action="/following/?target=/users/" method="post" enctype="multipart/form-data">
-            <input type="submit" name="unfollow" value="Unfollow">
-            <input type="hidden" name="username" value="{{ following.username }}">
-            <input type="hidden" name="operation" value="unfollow">
-          </form>
-        {% elif following.relationship == 'not following' %}
-        
-          <form action="/following/?target=/users/" method="post" enctype="multipart/form-data">
-            <input type="submit" name="follow" value="Follow">
-            <input type="hidden" name="username" value="{{ following.username }}">
-            <input type="hidden" name="operation" value="follow">
-          </form>
-        {% endif %}
+        <a href="/explore/" class="explore" style="font-size: 17px"
+          >Explore &nbsp;</a>
       </li>
-    {% endfor %}
-  </ul>
-      </div>
+      <li>
+        <a href="/users/{{ logname }}/" style="font-size: 17px"
+          >{{ logname }}</a
+        >
+      </li>
+    </ul>
+    {% endblock main%}
+
+    <h1>Following{{ user_url_slug }}</h1>
+
+    {% for following in following_in %}
+    <img src="/uploads/{{following.filename}}" alt="" />
+    <a href="/users/{{ following.username }}/">{{ following.username }}</a>
+    {% if following.relationship == 'following' %}
+    <p>following</p>
+    <form
+      action="/following/?target=/users/"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="submit" name="unfollow" value="Unfollow" />
+      <input type="hidden" name="username" value="{{ following.username }}" />
+      <input type="hidden" name="operation" value="unfollow" />
+    </form>
+    {% elif following.relationship == 'not following' %}
+
+    <form
+      action="/following/?target=/users/"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="submit" name="follow" value="Follow" />
+      <input type="hidden" name="username" value="{{ following.username }}" />
+      <input type="hidden" name="operation" value="follow" />
+    </form>
+    {% endif %} {% endfor %}
   </body>
 </html>

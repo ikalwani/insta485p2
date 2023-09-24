@@ -40,35 +40,32 @@
     </style>
   </head>
   <body>
-      {% block main %}
+    {% block main %}
 
-      <div class="container">
-        <div class="div">
-          <div class="images">
-            <a href="/"> <br> Home</a>
-          </div>
-          <ul>
-            <li>
-              <a href="/explore/" class="explore" style="font-size: 17px"
-                >Explore &nbsp;</a
-              >
-            </li>
-            <li>
-              <a href="/users/{{ logname }}/" style="font-size: 17px"
-                >{{ logname }}</a
-              >
-            </li>
-          </ul>
-        </div>
-        {% endblock main%} 
-        {% block content %}
-        {{logname}}
-        
-        <form action="/accounts/" method="post" enctype="multipart/form-data">
-            <input type="submit" name="delete" value="Confirm Delete Account">
-            <input type="hidden" name="operation" value="delete">
-        </form>
-        {% endblock %}
-      </div>
+    <a href="/">
+      <br />
+      Home</a
+    >
+
+    <ul>
+      <li>
+        <a href="/explore/" class="explore" style="font-size: 17px"
+          >Explore &nbsp;</a
+        >
+      </li>
+      <li>
+        <a href="/users/{{ logname }}/" style="font-size: 17px"
+          >{{ logname }}</a
+        >
+      </li>
+    </ul>
+
+    {% endblock main%} {% block content %} {{logname}}
+
+    <form action="/accounts/" method="post" enctype="multipart/form-data">
+      <input type="submit" name="delete" value="Confirm Delete Account" />
+      <input type="hidden" name="operation" value="delete" />
+    </form>
+    {% endblock %}
   </body>
 </html>

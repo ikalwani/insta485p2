@@ -40,54 +40,51 @@
     </style>
   </head>
   <body>
-      {% block main %}
+    {% block main %}
 
-      <div class="container">
-        <div class="div">
-          <div class="images">
-           <a href="/"> <br> Home</a>
-          </div>
-          <ul>
-            <li>
-              <a href="/explore/" class="explore" style="font-size: 17px"
-                >Explore &nbsp;</a
-              >
-            </li>
-            <li>
-              <a href="/users/{{ logname }}/" style="font-size: 17px"
-                >{{ logname }}</a
-              >
-            </li>
-          </ul>
+    <div class="container">
+      <div class="div">
+        <div class="images">
+          <a href="/">
+            Home</a
+          >
         </div>
-        {% endblock main%} 
-        {% block content %}
-        <div>
-            <h1>Discover People</h1>
-        </div>
-
-        <div class="user-list">
-      {% for user in users_not_followed %}
-      <div class="user-item">
-        <img src="/uploads/{{ user.filename }}" alt="">
-        <a href="/users/{{ user.username }}/">{{ user.username }}</a>
-        <form action="/following/?target=/explore/" method="post" enctype="multipart/form-data">
-            <input type="submit" name="follow" value="follow"/>
-  <input type="hidden" name="username" value="{{ user.username }}"/>
-  <input type="hidden" name="operation" value="follow"/>
-        </form>
+        <ul>
+          <li>
+            <a href="/explore/" class="explore" style="font-size: 17px"
+              >Explore &nbsp;</a
+            >
+          </li>
+          <li>
+            <a href="/users/{{ logname }}/" style="font-size: 17px"
+              >{{ logname }}</a
+            >
+          </li>
+        </ul>
       </div>
-      {% endfor %}
+      {% endblock main%} {% block content %}
+      <div>
+        <h1>Discover People</h1>
+      </div>
+
+      <div class="user-list">
+        {% for user in users_not_followed %}
+        <div class="user-item">
+          <img src="/uploads/{{ user.filename }}" alt="" />
+          <a href="/users/{{ user.username }}/">{{ user.username }}</a>
+          <form
+            action="/following/?target=/explore/"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <input type="submit" name="follow" value="follow" />
+            <input type="hidden" name="username" value="{{ user.username }}" />
+            <input type="hidden" name="operation" value="follow" />
+          </form>
+        </div>
+        {% endfor %}
+      </div>
+      {% endblock %}
     </div>
-
-    
-
-
-
-
-
-
-        {% endblock %}
-      </div>
   </body>
 </html>

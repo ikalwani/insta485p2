@@ -40,47 +40,51 @@
     </style>
   </head>
   <body>
-      {% block main %}
+    {% block main %}
 
-      <div class="container">
-        <div class="div">
-          <div class="images">
-            <a href="/"> <br> Home</a>
-          </div>
-          <ul>
-            <li>
-              <a href="/explore/" class="explore" style="font-size: 17px"
-                >Explore &nbsp;</a
-              >
-            </li>
-            <li>
-              <a href="/users/{{ logname }}/" style="font-size: 17px"
-                >{{ logname }}</a
-              >
-            </li>
-          </ul>
+    <div class="container">
+      <div class="div">
+        <div class="images">
+          <a href="/">Home</a>
         </div>
-        {% endblock main%} 
-        {% block content %}
-        <h2>{{ logname }}</h2>
-
-   <img src="/uploads/{{ filename }}" alt="" /></a>
-
-        <form action="/accounts/?target={{url_for('edit')}}" method="post" enctype="multipart/form-data">
-            <p1>Photo  </p1><input type="file" name="file" accept="image/*"/>
-            <p1>Name  </p1><input type="text" name="fullname" value="{{fullname}}" required/>
-            <p1>Email  </p1><input type="text" name="email" value="{{email}}" required/>
-            <input type="submit" name="update" value="submit"/>
-            <input type="hidden" name="operation" value="edit_account"/>
-        </form>
-
-         <!-- Link to change password -->
-         <a href="{{ url_for('password_user')}}">Change Password</a>
-        
-        <!-- Link to delete account -->
-        <a href="{{ url_for('delete')}}">Delete Password</a>
-        
-        {% endblock %}
+        <ul>
+          <li>
+            <a href="/explore/" class="explore" style="font-size: 17px"
+              >Explore &nbsp;</a
+            >
+          </li>
+          <li>
+            <a href="/users/{{ logname }}/" style="font-size: 17px"
+              >{{ logname }}</a
+            >
+          </li>
+        </ul>
       </div>
+      {% endblock main%} {% block content %}
+      <h2>{{ logname }}</h2>
+      <img src="/uploads/{{ filename }}" alt="" />
+      <form
+        action="/accounts/?target={{url_for('edit')}}"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <p>Photo</p>
+        <input type="file" name="file" accept="image/*" />
+        <p>Name</p>
+        <input type="text" name="fullname" value="{{fullname}}" required />
+        <p>Email</p>
+        <input type="text" name="email" value="{{email}}" required />
+        <input type="submit" name="update" value="submit" />
+        <input type="hidden" name="operation" value="edit_account" />
+      </form>
+
+      <!-- Link to change password -->
+      <a href="{{ url_for('password_user')}}">Change Password</a>
+
+      <!-- Link to delete account -->
+      <a href="{{ url_for('delete')}}">Delete Password</a>
+
+      {% endblock %}
+    </div>
   </body>
 </html>

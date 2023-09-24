@@ -40,52 +40,41 @@
     </style>
   </head>
   <body>
-      
-
-      <div class="container">
-        <div class="div">
-          <div class="images">
-           <a href="/"> <br> Home</a>
-          </div>
-          <ul>
-            <li>
-              <a href="/explore/" class="explore" style="font-size: 17px"
-                >Explore &nbsp;</a
-              >
-            </li>
-            <li>
-              <a href="/users/awdeorio/" style="font-size: 17px"
-                >awdeorio</a
-              >
-            </li>
-          </ul>
-        </div>
-         
-
-        <h1>Following</h1>
-
-  <ul>
     
+    <a href="/">
+      Home</a>
+    <ul>
       <li>
-        <img src= "/uploads/e1a7c5c32973862ee15173b0259e3efdb6a391af.jpg" alt="" />
-        <a href="/users/awdeorio/">awdeorio</a>
-        
+        <a href="/explore/" class="explore" style="font-size: 17px"
+          >Explore &nbsp;</a>
       </li>
-    
       <li>
-        <img src= "/uploads/5ecde7677b83304132cb2871516ea50032ff7a4f.jpg" alt="" />
-        <a href="/users/michjc/">michjc</a>
-        
-        <p>following</p>
-          <form action="/following/?target=/users/" method="post" enctype="multipart/form-data">
-            <input type="submit" name="unfollow" value="Unfollow">
-            <input type="hidden" name="username" value="michjc">
-            <input type="hidden" name="operation" value="unfollow">
-          </form>
-        
+        <a href="/users/awdeorio/" style="font-size: 17px"
+          >awdeorio</a
+        >
       </li>
+    </ul>
     
-  </ul>
-      </div>
+
+    <h1>Following</h1>
+
+    
+    <img src="/uploads/e1a7c5c32973862ee15173b0259e3efdb6a391af.jpg" alt="" />
+    <a href="/users/awdeorio/">awdeorio</a>
+     
+    <img src="/uploads/5ecde7677b83304132cb2871516ea50032ff7a4f.jpg" alt="" />
+    <a href="/users/michjc/">michjc</a>
+    
+    <p>following</p>
+    <form
+      action="/following/?target=/users/"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="submit" name="unfollow" value="Unfollow" />
+      <input type="hidden" name="username" value="michjc" />
+      <input type="hidden" name="operation" value="unfollow" />
+    </form>
+     
   </body>
 </html>

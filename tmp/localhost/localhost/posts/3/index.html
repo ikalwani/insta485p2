@@ -40,94 +40,74 @@
     </style>
   </head>
   <body>
-      
+    
+    <a href="/">Home "</a>
+    <a href="/explore/" class="explore" style="font-size: 17px"
+      >Explore &nbsp;</a
+    >
+    <a href="/users/awdeorio/" style="font-size: 17px">awdeorio</a>
+     1 like
+    <a href="/users/awdeorio/">awdeorio</a>
 
-      <div class="container">
-        <div class="div">
-          <div class="images">
-            <a href="/">Home "</a>
-          </div>
-          <ul>
-            <li>
-              <a href="/explore/" class="explore" style="font-size: 17px"
-                >Explore &nbsp;</a
-              >
-            </li>
-            <li>
-              <a href="/users/awdeorio/" style="font-size: 17px"
-                >awdeorio</a
-              >
-            </li>
-          </ul>
-        </div>
-         
-        
-<div>
-
-
-1 like
-<a href="/users/awdeorio/">awdeorio</a>
-
-<a href="/users/awdeorio/"><img src="/uploads/e1a7c5c32973862ee15173b0259e3efdb6a391af.jpg" alt="awdeorio" /></a>
-<a href="/posts/3/">just now</a>
-
-    <li>
+    <a href="/users/awdeorio/"
+      ><img src="/uploads/e1a7c5c32973862ee15173b0259e3efdb6a391af.jpg" alt="awdeorio"
+    /></a>
+    <a href="/posts/3/">just now</a>
+    
     <a href="/users/awdeorio/"></a>
-    <b>awdeorio<b> #chickensofinstagram 
-    </li>
-    
-        <form action="/comments/?target=/posts/3/" method="post"
-            enctype="multipart/form-data">
-            <input type="hidden" name="operation" value="delete" />
-            <input type="hidden" name="commentid" value="1" />
-            <input type="submit" name="uncomment" value="delete" />
-        </form>
-        
-
-    <li>
+    awdeorio #chickensofinstagram 
+    <form
+      action="/comments/?target=/posts/3/"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="hidden" name="operation" value="delete" />
+      <input type="hidden" name="commentid" value="1" />
+      <input type="submit" name="uncomment" value="delete" />
+    </form>
+     
     <a href="/users/jflinn/"></a>
-    <b>jflinn<b> I &lt;3 chickens 
-    </li>
-    
-
-    <li>
+    jflinn I &lt;3 chickens  
     <a href="/users/michjc/"></a>
-    <b>michjc<b> Cute overload! 
-    </li>
+    michjc Cute overload!  
+
+    <img src="/uploads/9887e06812ef434d291e4936417d125cd594b38a.jpg" alt="" />
     
-
-    </ul>
-
-
-<img src="/uploads/9887e06812ef434d291e4936417d125cd594b38a.jpg" alt="" />
-
-     <form action="/likes/?target=/posts/3/" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="operation" value="unlike"/>
-        <input type="hidden" name="postid" value="3"/>
-        <input type="submit" name="unlike" value="unlike"/>
+    <form
+      action="/likes/?target=/posts/3/"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="hidden" name="operation" value="unlike" />
+      <input type="hidden" name="postid" value="3" />
+      <input type="submit" name="unlike" value="unlike" />
     </form>
 
+    
 
+    <form
+      action="/comments/?target=/posts/3/"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="hidden" name="operation" value="create" />
+      <input type="hidden" name="postid" value="3" />
+      <input type="text" name="text" required />
+      <input type="submit" name="comment" value="comment" />
+    </form>
 
-<form action="/comments/?target=/posts/3/" method="post"
-            enctype="multipart/form-data">
-<input type="hidden" name="operation" value="create" />
-<input type="hidden" name="postid" value="3" />
-<input type="text" name="text" required />
-<input type="submit" name="comment" value="comment" />
-</form>
+    
 
+    <form
+      action="/posts/?target=/users/awdeorio/"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="hidden" name="operation" value="delete" />
+      <input type="hidden" name="postid" value="3" />
+      <input type="submit" name="delete" value="delete this post" />
+    </form>
 
-
-<form action="/posts/?target=/users/awdeorio/"
-    method="post" enctype="multipart/form-data">
-    <input type="hidden" name="operation" value="delete" />
-    <input type="hidden" name="postid" value="3" />
-    <input type="submit" name="delete" value="delete this post" />
-</form>
-
-
-
-</div>
-</body>
+    
+  </body>
 </html>
